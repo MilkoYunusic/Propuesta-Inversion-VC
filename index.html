@@ -108,7 +108,7 @@
                     </div>
                      <div>
                         <div class="flex items-center justify-center">
-                           <p class="text-sm text-slate-400">Impuestos (Tasa Efectiva 15.57%)</p>
+                           <p class="text-sm text-slate-400">Impuestos (Tasa 35%)</p>
                            <button id="dap-tax-info-btn" class="info-btn">!</button>
                         </div>
                         <p class="text-2xl font-semibold text-amber-400" id="dap-tax-amount">-$0</p>
@@ -210,7 +210,7 @@
                 <div class="calc-row"><span>Ganancia Bruta Anual</span> <span id="dap-tax-modal-gross"></span></div>
                 <div class="calc-row"><span>Ajuste por IPC (4%)</span> <span id="dap-tax-modal-ipc"></span></div>
                 <div class="calc-row total"><span>= Ganancia Imponible</span> <span id="dap-tax-modal-taxable"></span></div>
-                <div class="calc-row"><span>Impuesto Aplicado (15.57%)</span> <span id="dap-tax-modal-tax-applied"></span></div>
+                <div class="calc-row"><span>Impuesto Aplicado (35%)</span> <span id="dap-tax-modal-tax-applied"></span></div>
                 <div class="calc-row total"><span>Total Impuesto Pagado</span> <span id="dap-tax-modal-total"></span></div>
             </div>
         </div>
@@ -223,7 +223,7 @@
             <div class="bg-slate-900 p-2 rounded mt-2 text-xs">
                 <p>1. Ganancia Bruta = Inversión × (Rentabilidad Anual)</p>
                 <p>2. Ganancia Imponible = Ganancia Bruta - (Inversión × IPC)</p>
-                <p>3. Impuesto = Ganancia Imponible × 15.57%</p>
+                <p>3. Impuesto = Ganancia Imponible × 35%</p>
                 <p><strong>4. Ganancia Neta = Ganancia Bruta - Impuesto</strong></p>
             </div>
         </div>
@@ -236,7 +236,7 @@
                 <div class="calc-row"><span>Costo Compra Sura (0.595%)</span> <span id="fund-deductions-modal-entry"></span></div>
                 <div class="calc-row"><span>Costo Venta Moneda (0.3%)</span> <span id="fund-deductions-modal-exit-fund"></span></div>
                 <div class="calc-row"><span>Advisory Fee (1%)</span> <span id="fund-deductions-modal-advisory"></span></div>
-                <div class="calc-row"><span>Costo Venta Sura (0.595%)</span> <span id="fund-deductions-modal-exit-broker"></span></div>
+                <div class="calc-row"><span>Costo Venta Sura (0)</span> <span id="fund-deductions-modal-exit-broker"></span></div>
                 <div class="calc-row"><span>Impuesto (10% sobre ganancia real)</span> <span id="fund-deductions-modal-tax"></span></div>
                 <div class="calc-row total"><span>= Total Descuentos</span> <span id="fund-deductions-modal-total"></span></div>
             </div>
@@ -263,11 +263,11 @@
         const initialInvestment = 50000000;
         const dapMonthlyRate = 0.004;
         const fundEntryFeeRate = 0.00595;
-        const fundExitBrokerFeeRate = 0.00595;
+        const fundExitBrokerFeeRate = 0.0;
         const fundExitFundFeeRate = 0.003;
         const advisoryFeeRate = 0.01; // NUEVO: Advisory Fee
         const ipcRate = 0.04; 
-        const dapTaxRate = 0.1557; 
+        const dapTaxRate = 0.35; 
         const fundTaxRate = 0.10;
 
         // --- ELEMENTOS DEL DOM ---
@@ -447,4 +447,5 @@
         });
     </script>
 </body>
+
 </html>
